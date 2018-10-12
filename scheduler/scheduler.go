@@ -67,6 +67,9 @@ type Process struct {
 
 	// Can be used to setup a CRON schedule to run this task periodically.
 	Schedule Schedule
+
+	// The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started.
+	HealthCheckGracePeriodSeconds uint
 }
 
 // Schedule represents a Schedule for scheduled tasks that run periodically.

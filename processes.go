@@ -96,6 +96,9 @@ type Process struct {
 
 	// An process specific environment variables.
 	Environment map[string]string `json:"Environment,omitempty"`
+
+	// The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started.
+	HealthCheckGracePeriodSeconds int `json:"omitempty"`
 }
 
 type Port struct {

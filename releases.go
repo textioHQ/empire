@@ -352,17 +352,18 @@ func newSchedulerProcess(release *Release, name string, p Process) (*scheduler.P
 	}
 
 	return &scheduler.Process{
-		Type:        name,
-		Env:         env,
-		Labels:      labels,
-		Command:     []string(p.Command),
-		Image:       release.Slug.Image,
-		Instances:   uint(p.Quantity),
-		MemoryLimit: uint(p.Memory),
-		CPUShares:   uint(p.CPUShare),
-		Nproc:       uint(p.Nproc),
-		Exposure:    exposure,
-		Schedule:    processSchedule(name, p),
+		Type:                          name,
+		Env:                           env,
+		Labels:                        labels,
+		Command:                       []string(p.Command),
+		Image:                         release.Slug.Image,
+		Instances:                     uint(p.Quantity),
+		MemoryLimit:                   uint(p.Memory),
+		CPUShares:                     uint(p.CPUShare),
+		Nproc:                         uint(p.Nproc),
+		Exposure:                      exposure,
+		Schedule:                      processSchedule(name, p),
+		HealthCheckGracePeriodSeconds: uint(p.HealthCheckGracePeriodSeconds),
 	}, nil
 }
 

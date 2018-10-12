@@ -76,6 +76,9 @@
     },
     "webScale": {
       "Type": "String"
+    },
+    "webGracePeriod": {
+        "Type": "String"
     }
   },
   "Resources": {
@@ -351,6 +354,9 @@
         "Cluster": "cluster",
         "DesiredCount": {
           "Ref": "webScale"
+        },
+        "healthCheckGracePeriodSeconds": {
+          "Ref": "webGracePeriod"
         },
         "LoadBalancers": [
           {

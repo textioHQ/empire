@@ -53,12 +53,13 @@ type LoadBalancer struct {
 // ECSServiceProperties represents the properties for the Custom::ECSService
 // resource.
 type ECSServiceProperties struct {
-	ServiceName    *string
-	Cluster        *string
-	DesiredCount   *customresources.IntValue
-	LoadBalancers  []LoadBalancer
-	Role           *string
-	TaskDefinition *string
+	ServiceName                   *string
+	Cluster                       *string
+	DesiredCount                  *customresources.IntValue
+	LoadBalancers                 []LoadBalancer
+	Role                          *string
+	TaskDefinition                *string
+	HealthCheckGracePeriodSeconds *customresources.IntValue
 }
 
 // ECSServiceResource is a Provisioner that creates and updates ECS services.
@@ -108,10 +109,11 @@ func (p *ECSServiceResource) Provision(ctx context.Context, req customresources.
 		}
 
 		resp, err := p.ecs.UpdateService(&ecs.UpdateServiceInput{
-			Service:        aws.String(id),
-			Cluster:        properties.Cluster,
-			DesiredCount:   properties.DesiredCount.Value(),
-			TaskDefinition: properties.TaskDefinition,
+			Service:                       aws.String(id),
+			Cluster:                       properties.Cluster,
+			DesiredCount:                  properties.DesiredCount.Value(),
+			TaskDefinition:                properties.TaskDefinition,
+			HealthCheckGracePeriodSeconds: properties.HealthCheckGracePeriodSeconds.Value(),
 		})
 		if err == nil {
 			d := primaryDeployment(resp.Service)
@@ -144,13 +146,14 @@ func (p *ECSServiceResource) create(ctx context.Context, clientToken string, pro
 	}
 
 	resp, err := p.ecs.CreateService(&ecs.CreateServiceInput{
-		ClientToken:    aws.String(clientToken),
-		ServiceName:    serviceName,
-		Cluster:        properties.Cluster,
-		DesiredCount:   properties.DesiredCount.Value(),
-		Role:           properties.Role,
-		TaskDefinition: properties.TaskDefinition,
-		LoadBalancers:  loadBalancers,
+		ClientToken:                   aws.String(clientToken),
+		ServiceName:                   serviceName,
+		Cluster:                       properties.Cluster,
+		DesiredCount:                  properties.DesiredCount.Value(),
+		Role:                          properties.Role,
+		TaskDefinition:                properties.TaskDefinition,
+		LoadBalancers:                 loadBalancers,
+		HealthCheckGracePeriodSeconds: properties.HealthCheckGracePeriodSeconds,
 	})
 	if err != nil {
 		return "", "", fmt.Errorf("error creating service: %v", err)

@@ -277,6 +277,10 @@ func (s *Scheduler) submit(ctx context.Context, tx *sql.Tx, app *scheduler.App, 
 			ParameterKey:   aws.String(scaleParameter(p.Type)),
 			ParameterValue: aws.String(fmt.Sprintf("%d", p.Instances)),
 		})
+		parameters = append(parameters, &cloudformation.Parameter{
+			ParameterKey:   aws.String(gracePeriodParameter(p.Type)),
+			ParameterValue: aws.String(fmt.Sprintf("%d", p.HealthCheckGracePeriodSeconds)),
+		})
 	}
 
 	output := make(chan stackOperationOutput, 1)

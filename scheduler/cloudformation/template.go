@@ -249,6 +249,11 @@ func (t *EmpireTemplate) Build(data *TemplateData) (*troposphere.Template, error
 			Type: "String",
 		}
 
+		tmpl.Parameters[gracePeriodParameter(p.Type)] = troposphere.Parameter{
+			Type:        "String",
+			Description: "The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started.",
+		}
+
 		switch {
 		case p.Schedule != nil:
 			// To save space in the template, avoid adding the
@@ -682,12 +687,13 @@ func (t *EmpireTemplate) addService(tmpl *troposphere.Template, app *scheduler.A
 	containerDefinition.PortMappings = portMappings
 
 	serviceProperties := map[string]interface{}{
-		"Cluster":        t.Cluster,
-		"DesiredCount":   Ref(scaleParameter(p.Type)),
-		"LoadBalancers":  loadBalancers,
-		"TaskDefinition": Ref(taskDefinition),
-		"ServiceName":    fmt.Sprintf("%s-%s", app.Name, p.Type),
-		"ServiceToken":   t.CustomResourcesTopic,
+		"Cluster":                       t.Cluster,
+		"DesiredCount":                  Ref(scaleParameter(p.Type)),
+		"HealthCheckGracePeriodSeconds": Ref(gracePeriodParameter(p.Type)),
+		"LoadBalancers":                 loadBalancers,
+		"TaskDefinition":                Ref(taskDefinition),
+		"ServiceName":                   fmt.Sprintf("%s-%s", app.Name, p.Type),
+		"ServiceToken":                  t.CustomResourcesTopic,
 	}
 	if len(loadBalancers) > 0 {
 		serviceProperties["Role"] = t.ServiceRole
@@ -796,6 +802,10 @@ func processResourceName(process string) string {
 // scale of a process.
 func scaleParameter(process string) string {
 	return fmt.Sprintf("%sScale", processResourceName(process))
+}
+
+func gracePeriodParameter(process string) string {
+	return fmt.Sprintf("%sHealthCheckGracePeriod", processResourceName(process))
 }
 
 // cloudformationContainerDefinition returns the CloudFormation representation
