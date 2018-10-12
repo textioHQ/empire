@@ -153,7 +153,7 @@ func (p *ECSServiceResource) create(ctx context.Context, clientToken string, pro
 		Role:                          properties.Role,
 		TaskDefinition:                properties.TaskDefinition,
 		LoadBalancers:                 loadBalancers,
-		HealthCheckGracePeriodSeconds: properties.HealthCheckGracePeriodSeconds,
+		HealthCheckGracePeriodSeconds: properties.HealthCheckGracePeriodSeconds.Value(),
 	})
 	if err != nil {
 		return "", "", fmt.Errorf("error creating service: %v", err)
