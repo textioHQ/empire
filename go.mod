@@ -1,0 +1,65 @@
+module github.com/remind101/empire
+
+go 1.12
+
+require (
+	github.com/DataDog/datadog-go v0.0.0-20160329135253-cc2f4770f4d6
+	github.com/aws/aws-sdk-go v1.4.1
+	github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d
+	github.com/bgentry/pflag v0.0.0-20140324094540-b008717215c7
+	github.com/bgentry/speakeasy v0.0.0-20140428224849-48b5b9e3fedb
+	github.com/bgentry/testnet v0.0.0-20131107221340-05450cdcf16c
+	github.com/cactus/go-statsd-client v3.1.0+incompatible
+	github.com/chzyer/readline v0.0.0-20160726135117-62c6fe619375
+	github.com/codegangsta/cli v0.0.0-20140923033435-f7ebb761e83e
+	github.com/crewjam/errset v0.0.0-20160219153700-f78d65de925c
+	github.com/crewjam/go-xmlsec v0.0.0-20160903233858-31c57ffee32d
+	github.com/dgrijalva/jwt-go v0.0.0-20140915181121-c0da49162251
+	github.com/docker/docker v1.11.2
+	github.com/docker/go-units v0.3.1
+	github.com/ejholmes/cloudwatch v0.0.0-20160209010147-301ca47d977c
+	github.com/ejholmes/flock v0.0.0-20150228180620-3c37e99d21fd
+	github.com/ejholmes/hookshot v0.0.0-20150722182347-4802bea38519
+	github.com/ernesto-jimenez/go-querystring v0.0.0-20141109014217-a9b7f983e384
+	github.com/fsouza/go-dockerclient v0.0.0-20160624230725-1a3d0cfd7814
+	github.com/go-ini/ini v0.0.0-20151124192405-03e0e7d51a13
+	github.com/go-sql-driver/mysql v0.0.0-20150219135347-7d52f0fc9e81
+	github.com/gocql/gocql v0.0.0-20150527092755-ec1f5626d698
+	github.com/golang/groupcache v0.0.0-20140708213846-8b25adc0f626
+	github.com/golang/snappy v0.0.0-20150514054436-a911026e1ffa
+	github.com/google/go-github v0.0.0-20150706211824-34fb8ee07214
+	github.com/google/go-querystring v0.0.0-20150414214848-547ef5ac9797
+	github.com/gorilla/context v0.0.0-20141217160251-215affda49ad
+	github.com/gorilla/mux v0.0.0-20140926153814-e444e69cbd2e
+	github.com/hashicorp/errwrap v0.0.0-20141028054710-7554cd9344ce
+	github.com/hashicorp/go-cleanhttp v0.0.0-20160407174126-ad28ea4487f0
+	github.com/hashicorp/go-multierror v0.0.0-20150916205742-d30f09973e19
+	github.com/inconshreveable/log15 v0.0.0-20150302051501-352fceb48e89
+	github.com/jinzhu/gorm v0.0.0-20150422073822-3c2915a9dfaa
+	github.com/jmespath/go-jmespath v0.0.0-20160202185014-0b12d6b521d8
+	github.com/joho/godotenv v0.0.0-20150907010228-4ed13390c0ac
+	github.com/joshk/pusher v0.0.0-20130925132008-011114c803b3
+	github.com/lib/pq v0.0.0-20150205084238-73672c224312
+	github.com/mattes/migrate v1.2.0
+	github.com/mattn/go-colorable v0.0.0-20150327010415-d67e0b7d1797
+	github.com/mattn/go-shellwords v1.0.0
+	github.com/mgutz/ansi v0.0.0-20130515065447-376eb392d7d7
+	github.com/mitchellh/hashstructure v0.0.0-20160609170929-b098c52ef6be
+	github.com/opencontainers/runc v0.0.0-20160624191023-629e35666d31
+	github.com/pmylund/go-cache v1.0.0
+	github.com/remind101/conveyor v0.0.0-20160209023232-5b863aa00964
+	github.com/remind101/kinesumer v0.0.0-20160623233746-1aebc6e37176
+	github.com/remind101/migrate v0.0.0-20160423010909-d22d647232c2
+	github.com/remind101/newrelic v0.0.0-20150529213318-04b4810fa8c0
+	github.com/remind101/pkg v0.0.0-20150602050417-835283e5cf4b
+	github.com/remind101/tugboat v0.0.0-20160105215111-9655efe1fc24
+	github.com/sirupsen/logrus v1.4.0 // indirect
+	github.com/stretchr/objx v0.1.1
+	github.com/stretchr/testify v1.2.2
+	golang.org/x/net v0.0.0-20181011144130-49bb7cea24b1
+	golang.org/x/oauth2 v0.0.0-20150701215807-8914e5017ca2
+	golang.org/x/text v0.0.0-20181010134911-4d1c5fb19474
+	gopkg.in/check.v1 v1.0.0-20160105164936-4f90aeace3a2
+	gopkg.in/gorp.v1 v1.7.1
+	gopkg.in/yaml.v2 v2.0.0-20150119185552-5d6f7e02b7cd
+)
