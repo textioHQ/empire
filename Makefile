@@ -10,10 +10,10 @@ clean:
 	rm -rf build/*
 
 build/empire:
-	go build -o build/empire ./cmd/empire
+	go build -mod vendor -v -o build/empire ./cmd/empire
 
 build/emp:
-	go build -o build/emp ./cmd/emp
+	go build -mod vendor -v -o build/emp ./cmd/emp
 
 bootstrap: cmds
 	createdb empire || true

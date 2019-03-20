@@ -45,6 +45,8 @@ github.com/google/go-github v0.0.0-20150706211824-34fb8ee07214 h1:rvtau1NYKBlq3J
 github.com/google/go-github v0.0.0-20150706211824-34fb8ee07214/go.mod h1:zLgOLi98H3fifZn+44m+umXrS52loVEgC2AApnigrVQ=
 github.com/google/go-querystring v0.0.0-20150414214848-547ef5ac9797 h1:XScp/7K55BJWgFeKalWP/2XvaRdhhhNJBOSQuFMS8mE=
 github.com/google/go-querystring v0.0.0-20150414214848-547ef5ac9797/go.mod h1:odCYkC5MyYFN7vkCjXpyrEuKhc/BUO6wN/zVPAxq5ck=
+github.com/google/uuid v1.0.0 h1:b4Gk+7WdP/d3HZH8EJsZpvV7EtDOgaZLtnaNGIu1adA=
+github.com/google/uuid v1.0.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
 github.com/gorilla/context v0.0.0-20141217160251-215affda49ad h1:wJwKN6X6iRRVnjdBgrkWjhBOvYm7yw5boqXwFUnBtbE=
 github.com/gorilla/context v0.0.0-20141217160251-215affda49ad/go.mod h1:kBGZzfjB9CEq2AlWe17Uuf7NDRt0dE0s8S51q0aT7Yg=
 github.com/gorilla/mux v0.0.0-20140926153814-e444e69cbd2e h1:nH09qCdJVZxw0nRVfm14xjXkw2puLyLPN56n4u+vTC0=
@@ -78,6 +80,8 @@ github.com/mitchellh/hashstructure v0.0.0-20160609170929-b098c52ef6be h1:ue7zT6T
 github.com/mitchellh/hashstructure v0.0.0-20160609170929-b098c52ef6be/go.mod h1:QjSHrPWS+BGUVBYkbTZWEnOh3G1DutKwClXU/ABz6AQ=
 github.com/opencontainers/runc v0.0.0-20160624191023-629e35666d31 h1:DrqiJTlGNjS2q/YCav++pla1EAuZYfN/H+SkxRfTidU=
 github.com/opencontainers/runc v0.0.0-20160624191023-629e35666d31/go.mod h1:qT5XzbpPznkRYVz/mWwUaVBUv2rmF59PVA73FjuZG0U=
+github.com/pborman/uuid v1.2.0 h1:J7Q5mO4ysT1dv8hyrUGHb9+ooztCXu1D8MY8DZYsu3g=
+github.com/pborman/uuid v1.2.0/go.mod h1:X/NO0urCmaxf9VXbdlT7C2Yzkj2IKimNn4k+gtPdI/k=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/pmylund/go-cache v1.0.0 h1:jbJMNhn4LhBfb3dRejPlnjxSiokDt4qO5NWt8mMi+UE=
 github.com/pmylund/go-cache v1.0.0/go.mod h1:hmz95dGvINpbRZGsqPcd7B5xXY5+EKb5PpGhQY3NTHk=

@@ -46,6 +46,7 @@ require (
 	github.com/mgutz/ansi v0.0.0-20130515065447-376eb392d7d7
 	github.com/mitchellh/hashstructure v0.0.0-20160609170929-b098c52ef6be
 	github.com/opencontainers/runc v0.0.0-20160624191023-629e35666d31
+	github.com/pborman/uuid v1.2.0 // indirect
 	github.com/pmylund/go-cache v1.0.0
 	github.com/remind101/conveyor v0.0.0-20160209023232-5b863aa00964
 	github.com/remind101/kinesumer v0.0.0-20160623233746-1aebc6e37176
